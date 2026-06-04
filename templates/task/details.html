@@ -9,7 +9,14 @@
 </head>
 <body>
     <header>
-        <h1>Task Details</h1>
+        <nav>
+            <h1>Task Details</h1>
+            <ul>
+                <li><a href="{% url 'tasks' %}">Dashboard</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+
     </header>
     <main>
         <section class="task-description">

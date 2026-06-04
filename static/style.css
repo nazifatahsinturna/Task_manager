@@ -19,10 +19,33 @@ body {
 main {
     flex:1;
 }
-h1 {
-    margin-top: 10px;
-    text-align: center;
+nav {
+        background-color: var(--front);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+
 }
+nav ul {
+    display: flex;
+    gap: 1rem;
+
+    
+
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
 
 #search {
     border-radius: 5px;
@@ -41,9 +64,9 @@ h1 {
 
 }
 
-h1 {
+/* h1 {
     margin: 20px auto;
-}
+} */
 
 section {
     border: 2px solid white;
@@ -197,10 +220,10 @@ footer {
 }
 
 
-.signup input[type="radio"], input[type="checkbox"]{
+/* .signup input[type="radio"], input[type="checkbox"]{
     box-shadow: none;
     width: 10%;
-}
+} */
 
 #description {
     width: 25rem;
