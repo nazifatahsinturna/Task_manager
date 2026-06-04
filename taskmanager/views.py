@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from task.models import *
+from .utils import login_required
 
 regex = r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,7}"
 
@@ -25,6 +26,7 @@ def login_view(request):
             messages.error(request, "Login failed! Wrong Password")
     return render(request, 'login.html')
 
+@login_required
 def task_view(request):
     return render(request, 'task/index.html')
 
@@ -57,9 +59,11 @@ def signup_view(request):
         
     return render(request, 'signup.html')
 
+@login_required
 def detail_view(request):
     return render(request, 'task/details.html')
 
+@login_required
 def logout_view(request):
     request.session.flush()
     messages.success(request, 'Successfully Logged out!!')
