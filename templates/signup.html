@@ -8,7 +8,15 @@
 
     <body>
         <h1 class="sign">Sign in:</h1>
-        <form class="signup">
+        {% if messages %}
+        {% for message in messages %}
+        <section>
+            <h3>{{message}}</h3>
+        </section>
+        {% endfor %}
+        {% endif %}
+        <form class="signup" method="post" id='signupform' action="#">
+            {% csrf_token %}
             <label for="name">Name:</label>
             <input id="name" type="text" name="name" placeholder="Enter Your Name" required>
 
@@ -25,7 +33,13 @@
             <br><br>
 
             <label for="pass">Password:</label>
-            <input id="pass" type="password" name ="new_password"
+            <input id="pass" type="password" name ="password"
+             placeholder="Enter Your Password" minlength="8" required>
+
+            <br><br>
+            
+            <label for="pass">Confirm Password:</label>
+            <input id="pass" type="password" name ="confirm-password"
              placeholder="Enter Your Password" minlength="8" required>
 
             <br><br>

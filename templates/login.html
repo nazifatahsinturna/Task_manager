@@ -10,14 +10,21 @@
         <h1 class="sign">Login:</h1>
         <main>
             <div  id= "login" class="signup">
-                <form>
-
+                {% if messages %}
+                {% for message in messages %}
+                <section>
+                    <h3>{{message}}</h3>
+                </section>
+                {% endfor %}
+                {% endif %}
+                <form method="post" id='loginform' action="#">
+                    {% csrf_token %}
                     <label for="user">Username:</label>
                     <input id="user" type="text" name="username" placeholder="Enter Your Userame" required>
 
                     <br>
                     <label for="pass">Password:</label>
-                    <input id="pass" type="password" name ="new_password"
+                    <input id="pass" type="password" name ="password"
                     placeholder="Enter Your Password" minlength="8" required>
 
                     <br><br>
