@@ -65,71 +65,13 @@
                     </div>
                     <div class="task-btn">
                         <a class='danger' href="{% url 'delete_task' task.id %}">Delete</a>
-                        <a class='detail'>View Details</a>
+                        <a class='detail' href= "{% url 'task_detail' task.id %}">View Details</a>
                     </div>
                 </li>
 
 
                 {% endfor %}
-                {% comment %} <li class="still-pending tasks">
-                    <div>
-                        <h3>Get a Job</h3>
-                        <p>You have to find a job</p>
-                        <p>Due: yyyy/mm/dd</p>
-                    </div>
-                    <form class="choices">
-                        <label>Status:
-                            <select name="priority">
-                                <option value="pending">Pending</option>
-                                <option value="in-progress" selected>In Progress</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                            <button type="submit">Change status</button>
-                        </label>
-                        <a class='danger'>Delete</a>
-                        <a class='detail'>View Details</a>
-                    </form> 
-                </li>
-                <li class="progress tasks">
-                    <div>
-                        <h3>Get Good marks</h3>
-                        <p>You have to get good marks</p>
-                        <p>Due: yyyy/mm/dd</p>
-                    </div>
-                    <form class="choices">
-                        <label>Status:
-                            <select name="priority">
-                                <option value="pending">Pending</option>
-                                <option value="in-progress" selected>In Progress</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                            <button type="submit">Change status</button>
-                        </label>
-                        <a class='danger'>Delete</a>
-                        <a class='detail'>View Details</a>
-                    </form> 
-                     
-                </li>
-                <li class="completed tasks">
-                    <div>
-                        <h3>Do the Dishes</h3>
-                        <p>Finsh the dishes by tonight</p>
-                        <p>Due: yyyy/mm/dd</p>
-                    </div>
-                    <form class="choices">
-                        <label>Status:
-                            <select name="priority">
-                                <option value="pending">Pending</option>
-                                <option value="in-progress" selected>In Progress</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                            <button type="submit">Change status</button>
-                        </label>
-                        <a class='danger'>Delete</a>
-                        <a class='detail'>View Details</a>
-                    </form> 
-                     
-                </li> {% endcomment %}
+                
             </ul>
         </section>
     </main>

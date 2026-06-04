@@ -83,8 +83,9 @@ def signup_view(request):
     return render(request, 'signup.html')
 
 @login_required
-def detail_view(request):
-    return render(request, 'task/details.html')
+def detail_view(request, id):
+    task = Task.objects.get(id=id)
+    return render(request, 'task/details.html', {'task': task})
 
 @login_required
 def logout_view(request):
