@@ -1,0 +1,42 @@
+{% load static %} <!--adding all the static files-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel ="stylesheet" href="{% static '/style.css'%}">
+    </head>
+
+    <body>
+        <h1 class="sign">Login:</h1>
+        <main>
+            <div  id= "login" class="signup">
+                <form>
+
+                    <label for="user">Username:</label>
+                    <input id="user" type="text" name="username" placeholder="Enter Your Userame" required>
+
+                    <br>
+                    <label for="pass">Password:</label>
+                    <input id="pass" type="password" name ="new_password"
+                    placeholder="Enter Your Password" minlength="8" required>
+
+                    <br><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="sign">
+                    <p>
+                        Don't have an account yet? <a href="{% url 'signup'%}">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+        
+
+    
+        <footer>
+            <p>&copy; 2025 Nazifa Tahsin. All rights reserved</p>
+        </footer>
+    </body>
+
+</html>

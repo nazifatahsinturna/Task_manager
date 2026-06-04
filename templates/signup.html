@@ -1,0 +1,46 @@
+{% load static %} <!--adding all the static files-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sigup Form</title>
+        <link rel ="stylesheet" href="{% static '/style.css'%}">
+    </head>
+
+    <body>
+        <h1 class="sign">Sign in:</h1>
+        <form class="signup">
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="name" placeholder="Enter Your Name" required>
+
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" placeholder="email@example.com" required>
+
+            <br><br>
+
+            <label for="user">Username:</label>
+            <input id="user" type="text" name="username" placeholder="Enter Your Userame" required>
+
+            <br><br>
+
+            <label for="pass">Password:</label>
+            <input id="pass" type="password" name ="new_password"
+             placeholder="Enter Your Password" minlength="8" required>
+
+            <br><br>
+
+            <input type="submit" value="Submit">
+
+            <div class="sign">
+                    <p>
+                        Already have an account? <a href="{% url 'login'%}">login</a>
+                    </p>
+                </div>
+        </form>
+        <footer>
+            <p>&copy; 2025 Nazifa Tahsin. All rights reserved</p>
+        </footer>
+    </body>
+
+</html>

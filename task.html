@@ -1,0 +1,110 @@
+<!-- {% load static %} adding all the static files -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="./style.css">
+    <title>Task Manager</title>
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+    </header>
+    <main>
+        <form class="task-form" method="post" action="/task/" enctype="multipart/form-data" autocomplete="off">
+            <label for="title">Task Name: </label>
+            <input id="title" name="title" type="text" placeholder="Add a task" minlength="1" maxlength="120" required>
+
+            <label>Priority:
+                <select name="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </label>
+
+            <label for="due">Due Date:</label>
+            <input id="due" name="due" type="date">
+            <br>
+            <label for="description">Description: </label>
+            <input id="description" name="description" placeholder="Add description" type="text">
+            <br>
+            <button class="btn" type="submit">Add</button>
+        </form>
+        <section>
+            <div class="filter">
+                <form class="search">
+                    <label>Search:
+                        <input id="search" name="search" placeholder="Search">
+                    </label>
+                </form>
+
+             </div>
+
+            <ul class="task-list">
+                <li class="still-pending tasks">
+                    <div>
+                        <h3>Get a Job</h3>
+                        <p>You have to find a job</p>
+                        <p>Due: yyyy/mm/dd</p>
+                    </div>
+                    <form class="choices">
+                        <label>Status:
+                            <select name="priority">
+                                <option value="pending">Pending</option>
+                                <option value="in-progress" selected>In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <button type="submit">Change status</button>
+                        </label>
+                        <a>Delete</a>
+                    </form> 
+                </li>
+                <li class="progress tasks">
+                    <div>
+                        <h3>Get Good marks</h3>
+                        <p>You have to get good marks</p>
+                        <p>Due: yyyy/mm/dd</p>
+                    </div>
+                    <form class="choices">
+                        <label>Status:
+                            <select name="priority">
+                                <option value="pending">Pending</option>
+                                <option value="in-progress" selected>In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <button type="submit">Change status</button>
+                        </label>
+                        <a>Delete</a>
+                    </form> 
+                     
+                </li>
+                <li class="completed tasks">
+                    <div>
+                        <h3>Do the Dishes</h3>
+                        <p>Finsh the dishes by tonight</p>
+                        <p>Due: yyyy/mm/dd</p>
+                    </div>
+                    <form class="choices">
+                        <label>Status:
+                            <select name="priority">
+                                <option value="pending">Pending</option>
+                                <option value="in-progress" selected>In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <button type="submit">Change status</button>
+                        </label>
+                        <a>Delete</a>
+                    </form> 
+                     
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Nazifa Tahsin. All rights reserved</p>
+    </footer>
+    
+</body>
+</html>
