@@ -84,6 +84,12 @@ def signup_view(request):
 
 @login_required
 def detail_view(request, id):
+    if request.method == 'POST':
+        status = request.POST.get("status")
+        task = Task.objects.get(id=id)
+        task.status = status
+        task.save()
+        return redirect('task_detail', id=id)
     task = Task.objects.get(id=id)
     return render(request, 'task/details.html', {'task': task})
 

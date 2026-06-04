@@ -17,12 +17,13 @@
                 <h2>Name: {{task.title}}</h2>
                 <h3>Priority: {{task.priority}}</h3>
                 <h3>Due Date: {{task.due_date}}</h3>
-                <form class="choices">
+                <form class="choices" id='status_form' action="#" method='post'>
+                    {% csrf_token %}
                             <label>Status:
-                                <select name="priority">
-                                    <option value="pending">Pending</option>
-                                    <option value="in-progress" selected>In Progress</option>
-                                    <option value="completed">Completed</option>
+                                <select name="status">
+                                    <option value="PENDING" {% if task.status == 'PENDING'%} selected {% endif %}>Pending</option>
+                                    <option value="IN_PROGRESS" {% if  task.status == 'IN_PROGRESS'%} selected {% endif %}>In Progress</option>
+                                    <option value="COMPLETED" {% if  task.status == 'COMPLETED' %} selected {% endif %}>Completed</option>    
                                 </select>
                                 <button type="submit">Change status</button>
                             </label>
