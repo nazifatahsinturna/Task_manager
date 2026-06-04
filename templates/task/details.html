@@ -14,6 +14,17 @@
     <main>
         <section class="task-description">
             <h2>Name: Get a Job</h2>
+            <form class="choices">
+                        <label>Status:
+                            <select name="priority">
+                                <option value="pending">Pending</option>
+                                <option value="in-progress" selected>In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <button type="submit">Change status</button>
+                        </label>
+                        {% comment %} <a class='danger'>Delete</a> {% endcomment %}
+            </form> 
             <h3>Priority: Low</h3>
             <h3>Due Date: 2012-06-02</h3>
             <p>

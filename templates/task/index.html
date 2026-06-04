@@ -44,7 +44,27 @@
              </div>
 
             <ul class="task-list">
+                {% for task in tasks %}
+                {% if task.status == 'PENDING'%}
                 <li class="still-pending tasks">
+                {% elif  task.status == 'IN_PROGRESS'%}
+                <li class="progress tasks">
+                {% elif task.status == 'COMPLETED' %}
+                <li class="completed tasks">
+                {% endif %}
+                    <div>
+                        <h3>{{task.title}}</h3>
+                        <p>Due: {{task.due_date}}</p>
+                    </div>
+                    <div class="task-btn">
+                        <a class='danger'>Delete</a>
+                        <a class='detail'>View Details</a>
+                    </div>
+                </li>
+
+
+                {% endfor %}
+                {% comment %} <li class="still-pending tasks">
                     <div>
                         <h3>Get a Job</h3>
                         <p>You have to find a job</p>
@@ -102,7 +122,7 @@
                         <a class='detail'>View Details</a>
                     </form> 
                      
-                </li>
+                </li> {% endcomment %}
             </ul>
         </section>
     </main>

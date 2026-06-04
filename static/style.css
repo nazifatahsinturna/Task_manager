@@ -64,7 +64,16 @@ ul {
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
+    /* align-items: */
 
+}
+.tasks h3{
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.tasks p {
+    font-size: 1.1rem;
 }
 
 .still-pending {
@@ -85,16 +94,21 @@ ul {
     gap: 5px;
 }
 
+.task-btn {
+    width: 20%;
+}
+
 .danger, .detail {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: 25px;
+    height: 30px;
     border: 1px solid black;
     border-radius: 5px;
     font-weight: 700;
     background-color: rgb(228, 128, 128);
+    margin: 10px auto;
 }
 
 .detail {

@@ -28,7 +28,11 @@ def login_view(request):
 
 @login_required
 def task_view(request):
-    return render(request, 'task/index.html')
+    user_id = request.session.get("user_id")
+    user = User.objects.get(id = user_id)
+    tasks = user.tasks.all() #select # from tasks where user_id = user.id
+    # print(tasks)
+    return render(request, 'task/index.html', {"tasks": tasks})
 
 def signup_view(request):
     if request.method == "POST":
