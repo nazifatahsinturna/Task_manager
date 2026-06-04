@@ -28,10 +28,29 @@ def login_view(request):
 
 @login_required
 def task_view(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        priority = request.POST.get('priority')
+        due_date = request.POST.get('due')
+        description = request.POST.get('description')
+        if title is None or title == 'title':
+            messages.error(request, 'You must provide a title for your task')
+        else:
+            user_id = request.session.get("user_id")
+            user = User.objects.get(id = user_id)
+            Task.objects.create(
+                title = title,
+                priority = priority,
+                due_date = due_date,
+                description = description,
+                owner = user
+            )
+            
     user_id = request.session.get("user_id")
     user = User.objects.get(id = user_id)
     tasks = user.tasks.all() #select # from tasks where user_id = user.id
     # print(tasks)
+
     return render(request, 'task/index.html', {"tasks": tasks})
 
 def signup_view(request):

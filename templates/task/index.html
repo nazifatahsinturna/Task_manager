@@ -12,7 +12,7 @@
         <h1>Task Manager</h1>
     </header>
     <main>
-        <form class="task-form" method="post" action="/task/" enctype="multipart/form-data" autocomplete="off">
+        <form class="task-form" method="post" action="{% url 'tasks' %}" enctype="multipart/form-data" autocomplete="off">
             {% csrf_token %}
             <label for="title">Task Name: </label>
             <input id="title" name="title" type="text" placeholder="Add a task" minlength="1" maxlength="120" required>

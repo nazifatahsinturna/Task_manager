@@ -26,12 +26,12 @@ class Task(models.Model):
     ]
 
     title = models.CharField(max_length=120)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
     priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='MEDIUM')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField (auto_now=True)
-    due_date = models.DateField()
+    due_date = models.DateField(null=True, blank=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tasks")
 
     def __str__(self):
