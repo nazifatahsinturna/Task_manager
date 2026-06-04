@@ -12,6 +12,13 @@
         <h1>Task Manager</h1>
     </header>
     <main>
+         {% if messages %}
+                {% for message in messages %}
+                <section>
+                    <h3>{{message}}</h3>
+                </section>
+                {% endfor %}
+        {% endif %}
         <form class="task-form" method="post" action="{% url 'tasks' %}" enctype="multipart/form-data" autocomplete="off">
             {% csrf_token %}
             <label for="title">Task Name: </label>
@@ -57,7 +64,7 @@
                         <p>Due: {{task.due_date}}</p>
                     </div>
                     <div class="task-btn">
-                        <a class='danger'>Delete</a>
+                        <a class='danger' href="{% url 'delete_task' task.id %}">Delete</a>
                         <a class='detail'>View Details</a>
                     </div>
                 </li>

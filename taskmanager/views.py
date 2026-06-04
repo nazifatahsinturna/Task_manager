@@ -45,7 +45,7 @@ def task_view(request):
                 description = description,
                 owner = user
             )
-            
+
     user_id = request.session.get("user_id")
     user = User.objects.get(id = user_id)
     tasks = user.tasks.all() #select # from tasks where user_id = user.id
@@ -91,3 +91,9 @@ def logout_view(request):
     request.session.flush()
     messages.success(request, 'Successfully Logged out!!')
     return redirect('login')
+
+
+def delete_task(request, id):
+    task = Task.objects.get(id=id)
+    task.delete()
+    return redirect('tasks')

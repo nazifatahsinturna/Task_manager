@@ -110,6 +110,8 @@ ul {
     font-weight: 700;
     background-color: rgb(228, 128, 128);
     margin: 10px auto;
+    text-decoration: none;
+    color: black;
 }
 
 .detail {
