@@ -1,7 +1,9 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
+
 :root {
     --bg: #c5daff;
     --font: white;
@@ -26,13 +28,12 @@ nav {
         justify-content: space-between;
         align-items: center;
         padding: 20px;
+        width: 100%;
 
 }
 nav ul {
     display: flex;
     gap: 1rem;
-
-    
 
 }
 
@@ -64,9 +65,6 @@ nav a:hover {
 
 }
 
-/* h1 {
-    margin: 20px auto;
-} */
 
 section {
     border: 2px solid white;
@@ -115,7 +113,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .task-btn {
@@ -211,7 +209,7 @@ footer {
 }
 
 .signup input {
-    width: 95%;
+    width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -220,10 +218,6 @@ footer {
 }
 
 
-/* .signup input[type="radio"], input[type="checkbox"]{
-    box-shadow: none;
-    width: 10%;
-} */
 
 #description {
     width: 25rem;
@@ -231,13 +225,32 @@ footer {
 }
 
 input[type="submit"] {
-    width: 100%;
+    margin: 15px auto;
+    margin-bottom: 0;
     background-color: #989feb;
     border: none;
     border-radius: 5px;
     cursor:pointer;
     transition: 0.3s;
 }
+   .choices button{
+    height: 1.5rem;
+    background-color: #989feb;
+    border: 1px solid #989feb;
+    border-radius: 5px;
+    cursor:pointer;
+
+    width: 45%;
+  }
+
+  .choices button:hover {
+    background-color: var(--front);
+  }
+  .choices select {
+    width: 45%;
+    height: 1.5rem;
+    border-radius: 5px;
+  } 
 
 .signup p {
     margin-top: 10px;
@@ -271,7 +284,165 @@ input[type="submit"]:hover {
     font-style: italic;   /*for firefox browsers*/
 }
 
-/* .task-list{
-    width: 80%;
-    background-color: var(--front);
-} */
+@media(max-width: 767px) { /*for mobile*/
+
+    nav h1 {
+        font-size: 1.3rem;
+    }
+
+    .signup {
+        width: 250px;
+    
+        padding: 20px;
+        
+        margin: 20px auto;
+        
+
+    }
+
+    #login {
+        width: 250px;
+    }
+
+    .signup label {
+        text-align: center;
+        display: block;
+        margin: 3px auto;
+        margin-top: 0;
+        font-size: 15px;
+
+    }
+
+    .signup input {
+        display: block;
+        width: 90%;
+        padding: 10px;
+        font-size: 13px;
+        margin: 0 auto;
+    }
+    .signup p {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    input[type="submit"] {
+
+        width: 90%;
+    }
+
+    nav {
+       padding: 5px 10px;
+
+    }
+
+
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .task-form {
+  
+        width: 225px;
+    }
+
+    .task-form label {
+        font-size: 13px;
+        display: block;
+    
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .task-form input {
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .task-form label[for="description"] {
+        display: block;
+        text-align: center;
+        margin: 5px auto;
+    }
+    #add {
+        display: block;
+        margin: 5px auto;
+        width: 100%;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        /* background-color: #7b6aea; */
+    }
+
+
+    #description {
+        margin: 0 auto;
+        width: 98%;
+        height: 2rem;
+    }
+    footer {
+        font-size: 13px;
+    }
+    .tasks {
+    padding: 5px 10px;
+    margin: 5px;
+    align-items: center;
+
+}
+    .tasks h3{
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+
+    .tasks p {
+        font-size: 0.7rem;
+    }
+
+    .danger, .detail {
+    height: 25px;
+    font-size: 11px;
+    font-weight: 400;
+
+    margin: 10px auto;
+   
+    }
+
+    .task-btn {
+        width: 38%;
+    }
+    section.task-list {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    .task-description h2{
+        margin-bottom: 7px;
+        font-size: 1.2rem;
+
+    }
+
+    .task-description h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    .task-description p {
+        padding: 10px;
+        font-size: 0.9rem;
+        
+    }
+    .choices{
+       
+        margin-bottom: 5px;
+    }
+
+    .choices select {
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+    .choices button {
+        width: 100%;
+    }
+}
