@@ -2,6 +2,7 @@ import re #for email verification
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.db.models import Q #for searching
 
 from task.models import *
 from .utils import login_required
@@ -45,13 +46,21 @@ def task_view(request):
                 description = description,
                 owner = user
             )
-
+    
     user_id = request.session.get("user_id")
     user = User.objects.get(id = user_id)
+    
     tasks = user.tasks.all() #select # from tasks where user_id = user.id
     # print(tasks)
+    search = request.GET.get("search")
+    if search:
+        tasks = tasks.filter(
+            Q(title__icontains=search) |
+            Q(description__icontains=search)
+        )
 
-    return render(request, 'task/index.html', {"tasks": tasks})
+
+    return render(request, 'task/index.html', {"tasks": tasks, "search": search})
 
 def signup_view(request):
     if request.method == "POST":

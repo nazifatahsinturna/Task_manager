@@ -43,15 +43,16 @@
 
             <label for="description" >Description: </label>
             <input id="description" name="description" placeholder="Add description" type="text">
-            <input id="add" type="submit" value="Add">
+            <input id="add" type="submit" value="Add" class='bt'>
         </form>
         <section class='task-list'>
             <div class="filter">
-                {% comment %} <form class="search">
-                    <label>Search:
-                        <input id="search" name="search" placeholder="Search">
+                <form class="search" method='get'>
+                    <label id="sh">
+                        <input id="search" name="search" placeholder="Search" value="{{ search|default:'' }}">
                     </label>
-                </form> {% endcomment %}
+                    <input type='submit' value = 'search' class='bt'>
+                </form>
 
              </div>
 

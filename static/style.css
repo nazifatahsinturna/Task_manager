@@ -256,14 +256,21 @@ input[type="submit"] {
     margin-top: 10px;
 }
 
-#add {
+#add, .bt{
     margin: 20px auto;
     /* width: 90%; */
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 10px 15px;
     /* background-color: #7b6aea; */
     border: 1px solid rgb(62, 62, 62);
+}
+
+.bt{
+    padding: 5px 10px;
+
+}
+#search {
+    padding-left: 10px;
 }
 
 
@@ -366,15 +373,34 @@ input[type="submit"]:hover {
         text-align: center;
         margin: 5px auto;
     }
-    #add {
+    #add{
         display: block;
         margin: 5px auto;
         width: 100%;
         text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding: 10px;
         /* background-color: #7b6aea; */
     }
+
+    .bt{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px 15px;
+    }
+    #sh {
+        text-align: center;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #search {
+        width: 85%;
+        height: 30px;
+    }
+
+
 
 
     #description {
